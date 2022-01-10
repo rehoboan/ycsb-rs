@@ -71,3 +71,4 @@ impl DB for SQLite {
         Ok(())
     }
 }
+

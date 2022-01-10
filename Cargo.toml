@@ -13,6 +13,8 @@ sql-builder = "3.1"
 sqlite = "0.26.0"
 structopt = "0.3.23"
 toml = "0.5.8"
+sled = "0.34.7"
 
 [profile.release]
 debug = true
+

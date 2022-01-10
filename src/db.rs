@@ -1,4 +1,5 @@
 use crate::sqlite::SQLite;
+use crate::sled::Sled;
 use anyhow::{anyhow, Result};
 use std::collections::HashMap;
 use std::rc::Rc;
@@ -12,6 +13,7 @@ pub trait DB {
 pub fn create_db(db: &str) -> Result<Rc<dyn DB>> {
     match db {
         "sqlite" => Ok(Rc::new(SQLite::new()?)),
+        "sled" => Ok(Rc::new(Sled::new()?)),
         db => Err(anyhow!("{} is an invalid database name", db)),
     }
 }
